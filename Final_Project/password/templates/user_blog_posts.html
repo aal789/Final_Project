@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-dark">
+  <div class="jumbotron text-dark">
+    <div align='center'>
+      <h1 >Welcome to the page for {{user.username}}</h1>
+      <img align='center' src="{{ url_for('static', filename='profile_pics/' + user.profile_image) }}">
+    </div>
+  </div>
+
+<div class="text-white" >
+  {% for post in blog_posts %}
+  <h6><div style="color:#7df9ff;font-family:Helvetica"> {{post}} </div></h6>
+   {% endfor %}
+</div>
+{% endblock content %}
